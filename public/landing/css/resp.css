@@ -1,0 +1,35 @@
+@media screen and (max-width: 600px) {
+	.img {
+		display: none;
+		width: 500px;
+	}
+
+	.gambar {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.img {
+		display: none;
+		width: 500px;
+	}
+
+	.gambar {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.img {
+		z-index: -1;
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.img {
+		z-index: -1;
+		width: 300px;
+	}
+}

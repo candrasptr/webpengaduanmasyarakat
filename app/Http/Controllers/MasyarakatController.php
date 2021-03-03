@@ -127,4 +127,23 @@ class MasyarakatController extends Controller
         DB::table('tbl_masyarakat')->where('nik',$id)->delete();
         return redirect()->back()->with('message','Berhasil dihapus');
     }
+
+    public function depan()
+    {
+        return view('masyarakat.index');
+    }
+
+    public function regis(Request $request)
+    {
+        $this->_validation($request);
+        $password = $request->password;
+        DB::table('tbl_masyarakat')->insert([
+            'nik'=>$request->nik,
+            'nama'=>$request->nama,
+            'username'=>$request->username,
+            'password'=>bcrypt($password),
+            'telp'=>$request->telp
+        ]);
+        return redirect('/')->with('message','Register berhasil ditambahkan');
+    }
 }

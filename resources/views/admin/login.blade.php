@@ -30,7 +30,7 @@
             </div>
 
             <div class="card card-success">
-              <div class="card-header"><h4 class="text-success">Login siswa</h4></div>
+              <div class="card-header"><h4 class="text-success">Login</h4></div>
 
               <div class="card-body">
                 <form method="POST" action="/proseslogin" class="needs-validation" novalidate="">

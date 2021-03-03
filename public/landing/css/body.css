@@ -1,0 +1,57 @@
+body {
+	position: relative;
+}
+
+.bg {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.tebel-banget {
+	font-weight: 900;
+}
+
+.tebel-sedang {
+	font-weight: bold;
+}
+
+.desc {
+	max-width: 400px;
+}
+
+.button {
+	background-color: #f19e00;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	transition: 0.3s;
+}
+
+.button:hover {
+	background-color: #ba7c25;
+	color: white;
+}
+
+.gambar {
+	display: none;
+}
+
+.img {
+	width: 500px;
+	z-index: -1;
+}
+
+.link {
+	color: #f19e00;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.link:hover {
+	color: #ba7c25;
+}

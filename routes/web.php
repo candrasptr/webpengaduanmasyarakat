@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('proseslogin','LoginController@postLogin');
 Route::get('logout','LoginController@logout');
+Route::view('register', 'register');
+Route::post('regis', 'MasyarakatController@regis')->name('register');
 
 Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('dashboard','DashboardController@index');
@@ -29,4 +31,8 @@ Route::group(['middleware'=>'auth:admin'], function(){
 
     // Masyarakat
     Route::resource('masyarakat', 'MasyarakatController');
+});
+
+Route::group(['middleware'=>'auth:masyarakat'], function(){
+    Route::get('masyarakat_depan','MasyarakatController@depan');
 });

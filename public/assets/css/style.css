@@ -733,6 +733,8 @@ select.form-control:not([size]):not([multiple]) {
     border-top: 2px solid #cdd3d8; }
   .card.card-success {
     border-top: 2px solid #47c363; }
+    .card.card-violet {
+      border-top: 2px solid #ea67ef; }
   .card.card-danger {
     border-top: 2px solid #fc544b; }
   .card.card-warning {
