@@ -100,8 +100,14 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .bg-dark {
   background-color: #191d21 !important; }
 
+.bg-violet {
+  background-color: #ea67ef !important; }
+
 .text-primary, .text-primary-all *, .text-primary-all *:before, .text-primary-all *:after {
   color: #6777ef !important; }
+
+.text-violet, .text-violet-all *, .text-violet-all *:before, .text-violet-all *:after {
+  color: #ea67ef !important; }
 
 .text-secondary, .text-secondary-all *, .text-secondary-all *:before, .text-secondary-all *:after {
   color: #cdd3d8 !important; }
@@ -1330,6 +1336,24 @@ h6 .badge {
   color: #6777ef; }
   .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.disabled:hover, .btn-outline-primary.disabled:focus, .btn-outline-primary.disabled:active {
     background-color: #6777ef !important;
+    color: #fff; }
+
+.btn-violet, .btn-violet.disabled {
+  box-shadow: 0 2px 6px #acb5f6;
+  background-color: #ea67ef;
+  border-color: #ea67ef; }
+  .btn-violet:focus, .btn-violet.disabled:focus {
+    background-color: #d45bd8 !important; }
+    .btn-violet:focus:active, .btn-violet.disabled:focus:active {
+      background-color: #d45bd8 !important; }
+  .btn-violet:active, .btn-violet:hover, .btn-violet.disabled:active, .btn-violet.disabled:hover {
+    background-color: #d45bd8 !important; }
+
+.btn-outline-violet, .btn-outline-violet.disabled {
+  border-color: #ea67ef;
+  color: #ea67ef; }
+  .btn-outline-violet:hover, .btn-outline-violet:focus, .btn-outline-violet:active, .btn-outline-violet.disabled:hover, .btn-outline-violet.disabled:focus, .btn-outline-violet.disabled:active {
+    background-color: #ea67ef !important;
     color: #fff; }
 
 .btn-outline-white, .btn-outline-white.disabled {

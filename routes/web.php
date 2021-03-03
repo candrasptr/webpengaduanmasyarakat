@@ -23,4 +23,7 @@ Route::get('logout','LoginController@logout');
 
 Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('dashboard','DashboardController@index');
+
+    // Petugas
+    Route::resource('petugas', 'PetugasController');
 });
