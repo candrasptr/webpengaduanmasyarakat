@@ -26,4 +26,7 @@ Route::group(['middleware'=>'auth:admin'], function(){
 
     // Petugas
     Route::resource('petugas', 'PetugasController');
+
+    // Masyarakat
+    Route::resource('masyarakat', 'MasyarakatController');
 });
