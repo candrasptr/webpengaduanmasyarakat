@@ -35,4 +35,7 @@ Route::group(['middleware'=>'auth:admin'], function(){
 
 Route::group(['middleware'=>'auth:masyarakat'], function(){
     Route::get('masyarakat_depan','MasyarakatController@depan');
+    Route::get('masyarakat_pengaduan','MasyarakatController@pengaduan');
+    Route::post('prosespengaduan','MasyarakatController@prosespengaduan');
+    Route::get('history','MasyarakatController@history');
 });

@@ -15,17 +15,17 @@
               <img src="{{ asset('landing/assets/vector-content.png') }}" class="img">
             </div>
   
-            <h1 class="display-1 text-truncate tebel-sedang">Learn</h1>
-            <h1 class="display-1 text-truncate tebel-sedang">Everywhere</h1>
+            <h1 class="display-1 text-truncate tebel-sedang">Pengaduan</h1>
+            <h1 class="display-1 text-truncate tebel-sedang">Masyarakat</h1>
   
             <div class="desc mt-4">
-              <p>Lorem ipsum dolor sit smaehi Lorem ipsum dolor sit smaehi Lorem ipsum dolor sit smaehi Lorem ipsum dolor sit smaehi Lorem ipsum dolor sit smaehi Lorem ipsum dolor sit smaehi</p>
+              <p>Website pengaduan masyarakat ini digunakan untuk menyampaikan pengaduan yang ingin masyarakat sampaikan.</p>
             </div>
   
             <div class="mt-5">
-              <a href="" class="button rounded-pill shadow tebel-sedang">Get started</a>
+              <a href="masyarakat_pengaduan" class="button rounded-pill shadow tebel-sedang">Isi pengaduan</a>
               &nbsp;
-              <a href="" class="link">or contact</a>
+              <a href="" class="link">panduan pengaduan</a>
             </div>
   
             <br>

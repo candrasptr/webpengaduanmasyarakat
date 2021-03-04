@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/body.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/navbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/resp.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style2.css') }}">
 
     <title>Hello, world!</title>
   </head>
@@ -49,8 +50,10 @@
       
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="{{ asset('landing/bs/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('landing/js/onscroll.js') }}"></script>
+    @stack('page-scripts')
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
+use Image;
 
 class MasyarakatController extends Controller
 {
@@ -145,5 +147,51 @@ class MasyarakatController extends Controller
             'telp'=>$request->telp
         ]);
         return redirect('/')->with('message','Register berhasil ditambahkan');
+    }
+
+    public function pengaduan()
+    {
+        return view('masyarakat.pengaduan');
+    }
+
+    public function prosespengaduan(Request $request)
+    {
+        $lokasi_file = public_path('/assets/img/produk');
+        
+        if(!empty($request->gambar_masakan))
+        {
+        //Resize Gambar Masakan
+        $gambar_masakan = $request->file('gambar_masakan');
+        $nama_gambar_masakan = 'produk_'. time() . '.' . $gambar_masakan->getClientOriginalExtension();
+        $resize_gambar_masakan = Image::make($gambar_masakan->getRealPath());
+        $resize_gambar_masakan->save($lokasi_file . '/' . $nama_gambar_masakan);
+        //End resize Gambar Masakan
+        
+        $tanggal = date('Y-m-d');
+        DB::table('tbl_pengaduan')->insert([
+            'tanggal_pengaduan'=>$tanggal,
+            'nik_id'=>Auth::guard('masyarakat')->user()->nik,
+            'isi_laporan'=>$request->isi,
+            'status'=>'terkirim',
+            'foto'=>$nama_gambar_masakan
+        ]);
+        }else{
+            $tanggal = date('Y-m-d');
+            DB::table('tbl_pengaduan')->insert([
+                'tanggal_pengaduan'=>$tanggal,
+                'nik_id'=>Auth::guard('masyarakat')->user()->nik,
+                'isi_laporan'=>$request->isi,
+                'status'=>'terkirim'
+            ]);
+        }
+
+        return redirect('/history')->with('message','Pengaduan terkirim');
+        
+    }
+
+    public function history()
+    {
+        $data = DB::table('tbl_pengaduan')->where('nik_id',Auth::guard('masyarakat')->user()->nik)->get();
+        return view('masyarakat.history',['data'=>$data]);
     }
 }
