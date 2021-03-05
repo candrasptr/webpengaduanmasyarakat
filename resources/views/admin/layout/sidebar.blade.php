@@ -16,6 +16,10 @@
         <li class="@yield('petugas')"><a class="nav-link" href="/petugas"><i class="fas fa-fire"></i> <span>petugas</span></a></li>
         <li class="@yield('masyarakat')"><a class="nav-link" href="/masyarakat"><i class="fas fa-fire"></i> <span>masyarakat</span></a></li>
 
+        {{-- Pengaduan --}}
+        <li class="menu-header">Pengaduan</li>
+        <li class="@yield('pengaduan')"><a class="nav-link" href="/pengaduan"><i class="fas fa-fire"></i> <span>Entry pengaduan</span></a></li>
+
       </ul>
   </aside>
 </div>

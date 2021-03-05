@@ -31,6 +31,11 @@ Route::group(['middleware'=>'auth:admin'], function(){
 
     // Masyarakat
     Route::resource('masyarakat', 'MasyarakatController');
+
+    // Pengaduan
+    Route::get('pengaduan','PengaduanController@index');
+    Route::get('pengaduan_p/{id}','PengaduanController@proses')->name('pengaduan.proses');
+    Route::get('pengaduan_s/{id}','PengaduanController@selesai')->name('pengaduan.selesai');
 });
 
 Route::group(['middleware'=>'auth:masyarakat'], function(){
