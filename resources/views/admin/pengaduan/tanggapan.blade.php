@@ -28,12 +28,14 @@
                         <label class="col-md-2">Isi</label>
                         <textarea rows="10" disabled class="form-control col-md-10">{{ $data->isi_laporan }}</textarea>
                     </div>
-                    <form action="">
+                    <form action="/tambahtanggapan" method="POST">
+                        @csrf
                         <div class="form-group row">
                             <label class="col-md-2">Tanggapan</label>
-                            <textarea rows="10" class="form-control col-md-10"></textarea>
+                            <input type="hidden" name="id" value="{{ $data->id_pengaduan }}">
+                            <textarea rows="10" class="form-control col-md-10" name="isi"></textarea>
                         </div>
-                        <a href="" class="btn btn-secondary ml-3 float-right"><i class="fas fa-undo-alt"></i> Kembali</a>
+                        <a href="/pengaduan" class="btn btn-secondary ml-3 float-right"><i class="fas fa-undo-alt"></i> Kembali</a>
                         <button type="submit" class="btn btn-warning float-right"><i class="fas fa-paper-plane"></i> Kirim</button>
                     </form>
                 </div>

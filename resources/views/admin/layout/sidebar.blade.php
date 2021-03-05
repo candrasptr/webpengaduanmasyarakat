@@ -19,6 +19,7 @@
         {{-- Pengaduan --}}
         <li class="menu-header">Pengaduan</li>
         <li class="@yield('pengaduan')"><a class="nav-link" href="/pengaduan"><i class="fas fa-fire"></i> <span>Entry pengaduan</span></a></li>
+        <li class="@yield('tanggapan')"><a class="nav-link" href="/tanggapan"><i class="fas fa-fire"></i> <span>Entry tanggapan</span></a></li>
 
       </ul>
   </aside>

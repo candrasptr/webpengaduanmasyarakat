@@ -37,6 +37,13 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('pengaduan_p/{id}','PengaduanController@proses')->name('pengaduan.proses');
     Route::get('pengaduan_s/{id}','PengaduanController@selesai')->name('pengaduan.selesai');
     Route::get('pengaduan_t/{id}','PengaduanController@tanggapan')->name('pengaduan.tanggapan');
+
+    // Tanggapan
+    Route::post('tambahtanggapan','TanggapanController@tambah');
+    Route::get('tanggapan','TanggapanController@index');
+    Route::get('tanggapan/{id}','TanggapanController@edit')->name('tanggapan.edit');
+    Route::patch('tanggapans/{id}','TanggapanController@update')->name('tanggapan.update');
+    Route::delete('tanggapand/{id}','TanggapanController@destroy')->name('tanggapan.destroy');
 });
 
 Route::group(['middleware'=>'auth:masyarakat'], function(){
