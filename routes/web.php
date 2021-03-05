@@ -36,6 +36,7 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('pengaduan','PengaduanController@index');
     Route::get('pengaduan_p/{id}','PengaduanController@proses')->name('pengaduan.proses');
     Route::get('pengaduan_s/{id}','PengaduanController@selesai')->name('pengaduan.selesai');
+    Route::get('pengaduan_t/{id}','PengaduanController@tanggapan')->name('pengaduan.tanggapan');
 });
 
 Route::group(['middleware'=>'auth:masyarakat'], function(){

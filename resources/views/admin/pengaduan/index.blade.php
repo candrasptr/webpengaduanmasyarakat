@@ -70,7 +70,7 @@
                                         @else
                                             
                                         @endif
-                                        <a href="" class="btn btn-warning"><i class="far fa-comment-dots"></i> Tanggapi</a>
+                                        <a href="{{ route('pengaduan.tanggapan',$item->id_pengaduan) }}" class="btn btn-warning"><i class="far fa-comment-dots"></i> Tanggapi</a>
                                     </td>
                                 </tr>
                                 @push('page-scripts')

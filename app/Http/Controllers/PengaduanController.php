@@ -36,4 +36,13 @@ class PengaduanController extends Controller
         ]);
         return redirect()->back()->with('message','Data pengaduan diselesaikan');
     }
+
+    public function tanggapan($id)
+    {
+        $data = DB::table('tbl_pengaduan')->where('id_pengaduan',$id)
+        ->join('tbl_masyarakat', function($join){
+            $join->on('tbl_pengaduan.nik_id','=','tbl_masyarakat.nik');
+        })->first();
+        return view('admin/pengaduan.tanggapan',['data'=>$data]);
+    }
 }
