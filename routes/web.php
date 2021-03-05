@@ -44,6 +44,10 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('tanggapan/{id}','TanggapanController@edit')->name('tanggapan.edit');
     Route::patch('tanggapans/{id}','TanggapanController@update')->name('tanggapan.update');
     Route::delete('tanggapand/{id}','TanggapanController@destroy')->name('tanggapan.destroy');
+
+    //Laporan
+    Route::view('laporan','admin/laporan.index');
+    Route::get('rekap_laporan','LaporanController@rekap');
 });
 
 Route::group(['middleware'=>'auth:masyarakat'], function(){
