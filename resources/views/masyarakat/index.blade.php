@@ -25,7 +25,7 @@
             <div class="mt-5">
               <a href="masyarakat_pengaduan" class="button rounded-pill shadow tebel-sedang">Isi pengaduan</a>
               &nbsp;
-              <a href="" class="link">panduan pengaduan</a>
+              <a href="history" class="link">history pengaduan</a>
             </div>
   
             <br>

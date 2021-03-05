@@ -52,45 +52,111 @@
       </div>
       @endif
         
-        <div class="row justify-content-center">
-             
-               
-            <div class="col-md-12 mb-5">
-            <div class="card-group">
-              @foreach ($data as $item) 
-              @php
-                $kode = 'PNGDN00'.$item->id_pengaduan
-              @endphp 
-              <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
-                <div class="card-body">
-                    <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6 col-6">
-                        @if ($item->foto != '')
-                            <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
-                        @else
-                            <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
-                        @endif
-                        </div>
-                        <div class="col-md-6 col-6">
-                          <b>Isi pengaduan</b><br>
-                          @php
-                              $num_char = 150;
-                              $text = $item->isi_laporan;
-                              $isi = Str::substr($text, 0, $num_char).'.....';
-                          @endphp 
-                          <span>{{ $isi }}</span>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              @endforeach
-            </div>            
-                
-            </div>
+      <div class="row justify-content-center">
+        @if ($data->count() == 1)
             
+              @foreach ($data as $item) 
+            @php
+              $kode = 'PNGDN00'.$item->id_pengaduan
+            @endphp 
+            <div class="col-md-6">
+            <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
+              <div class="card-body">
+                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <hr>
+                  <div class="row">
+                      <div class="col-md-4 col-4">
+                      @if ($item->foto != '')
+                          <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
+                      @else
+                          <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
+                      @endif
+                      </div>
+                      <div class="col-md-8 col-8">
+                        <b>Isi pengaduan</b><br>
+                        @php
+                            $num_char = 150;
+                            $text = $item->isi_laporan;
+                            $isi = Str::substr($text, 0, $num_char).'.....';
+                        @endphp 
+                        <span>{{ $isi }}</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+            
+        @elseif($data->count() == 2)
+        <div class="col-md-12 mb-5">
+          <div class="card-group">
+            @foreach ($data as $item) 
+            @php
+              $kode = 'PNGDN00'.$item->id_pengaduan
+            @endphp 
+            <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
+              <div class="card-body">
+                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <hr>
+                  <div class="row">
+                      <div class="col-md-4 col-4">
+                      @if ($item->foto != '')
+                          <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
+                      @else
+                          <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
+                      @endif
+                      </div>
+                      <div class="col-md-8 col-8">
+                        <b>Isi pengaduan</b><br>
+                        @php
+                            $num_char = 150;
+                            $text = $item->isi_laporan;
+                            $isi = Str::substr($text, 0, $num_char).'.....';
+                        @endphp 
+                        <span>{{ $isi }}</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            @endforeach
+          </div>            
         </div>
+        @else
+        <div class="col-md-12 mb-5">
+          <div class="card-group">
+            @foreach ($data as $item) 
+            @php
+              $kode = 'PNGDN00'.$item->id_pengaduan
+            @endphp 
+            <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
+              <div class="card-body">
+                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <hr>
+                  <div class="row">
+                      <div class="col-md-6 col-6">
+                      @if ($item->foto != '')
+                          <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
+                      @else
+                          <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
+                      @endif
+                      </div>
+                      <div class="col-md-6 col-6">
+                        <b>Isi pengaduan</b><br>
+                        @php
+                            $num_char = 150;
+                            $text = $item->isi_laporan;
+                            $isi = Str::substr($text, 0, $num_char).'.....';
+                        @endphp 
+                        <span>{{ $isi }}</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            @endforeach
+          </div>            
+        </div>            
+        @endif   
+      </div>  
     </div>
 
   <!-- General JS Scripts -->
