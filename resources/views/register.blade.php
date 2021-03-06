@@ -26,11 +26,11 @@
             <div class="row">
               <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                 <div class="login-brand">
-                  <img src="{{ asset('assets/img/promotion.png') }}" alt="logo" width="100" class="shadow-light rounded-circle">
+                  <img src="{{ asset('assets/img/student.png') }}" alt="logo" width="100" class="shadow-light rounded-circle">
                 </div>
     
-                <div class="card card-violet">
-                  <div class="card-header"><h4 class="text-violet">Register</h4></div>
+                <div class="card card-warning">
+                  <div class="card-header"><h4 class="text-warning">Register</h4></div>
     
                   <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -69,7 +69,7 @@
                       </div>
     
                       <div class="form-group">
-                        <button type="submit" class="btn btn-violet text-light btn-lg btn-block">
+                        <button type="submit" class="btn btn-warning text-light btn-lg btn-block">
                           Register
                         </button>
                       </div>

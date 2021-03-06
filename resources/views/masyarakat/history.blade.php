@@ -16,7 +16,11 @@
   <link rel="icon" href="{{ asset('assets/img/logosmk.png') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}">
+  <link href="{{ asset('landing/bs/css/bootstrap.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/body.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/body.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/navbar.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/resp.css') }}">
 </head>
 
 
@@ -51,8 +55,14 @@
         </button>
       </div>
       @endif
+      <div class="row">
+        <div class="col-lg-12 gambar">
+          <img src="{{ asset('landing/assets/vector-content.png') }}" width="100%">
+        </div>  
+      </div>
         
       <div class="row justify-content-center">
+        
         @if ($data->count() == 1)
             
               @foreach ($data as $item) 
@@ -60,9 +70,10 @@
               $kode = 'PNGDN00'.$item->id_pengaduan
             @endphp 
             <div class="col-md-6">
-            <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
+            <h3 class="text-warning">History pengaduan</h3><hr width="100" class="text-right" style="height: 2px; color: blue;">
+            <br><div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
               <div class="card-body">
-                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <h5 class="text-warning">{{ $kode }} | {{ $item->status }}</h5>
                   <hr>
                   <div class="row">
                       <div class="col-md-4 col-4">
@@ -79,9 +90,12 @@
                             $text = $item->isi_laporan;
                             $isi = Str::substr($text, 0, $num_char).'.....';
                         @endphp 
-                        <span>{{ $isi }}</span>
+                        <p style="text-align: justify;">{{ $isi }}</p>
                       </div>
                   </div>
+              </div>
+              <div class="card-footer bg-transparent text-right">
+                <a href="">Lihat tanggapan</a>
               </div>
             </div>
           </div>
@@ -89,14 +103,15 @@
             
         @elseif($data->count() == 2)
         <div class="col-md-12 mb-5">
-          <div class="card-group">
+          <h3 class="text-warning">History pengaduan</h3><hr width="100" class="text-right" style="height: 2px; color: blue;">
+          <br>  <div class="card-group">
             @foreach ($data as $item) 
             @php
               $kode = 'PNGDN00'.$item->id_pengaduan
             @endphp 
             <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
               <div class="card-body">
-                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <h5 class="text-warning">{{ $kode }} | {{ $item->status }}</h5>
                   <hr>
                   <div class="row">
                       <div class="col-md-4 col-4">
@@ -113,16 +128,21 @@
                             $text = $item->isi_laporan;
                             $isi = Str::substr($text, 0, $num_char).'.....';
                         @endphp 
-                        <span>{{ $isi }}</span>
+                        <p style="text-align: justify;">{{ $isi }}</p>
                       </div>
                   </div>
+              </div>
+              <div class="card-footer bg-transparent text-right">
+                <a href="">Lihat tanggapan</a>
               </div>
             </div>
             @endforeach
           </div>            
         </div>
         @else
-        <div class="col-md-12 mb-5">
+        <div class="col-md-12 mb-5 text-left">
+          <h3 class="text-warning">History pengaduan</h3><hr width="100" class="text-left" style="height: 2px; color: blue;">
+<br>
           <div class="card-group">
             @foreach ($data as $item) 
             @php
@@ -130,26 +150,30 @@
             @endphp 
             <div class="card mr-3" id="card-cart" style="box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);" style="width: 25rem; height: 18rem;">
               <div class="card-body">
-                  <h5 class="text-success">{{ $kode }} | {{ $item->status }}</h5>
+                  <h5 class="text-warning">{{ $kode }} | {{ $item->status }}</h5>
                   <hr>
                   <div class="row">
-                      <div class="col-md-6 col-6">
+                      <div class="col-md-6 col-12">
                       @if ($item->foto != '')
                           <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
                       @else
                           <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
                       @endif
                       </div>
-                      <div class="col-md-6 col-6">
+                      <div class="col-md-6 col-12">
                         <b>Isi pengaduan</b><br>
                         @php
                             $num_char = 150;
                             $text = $item->isi_laporan;
                             $isi = Str::substr($text, 0, $num_char).'.....';
                         @endphp 
-                        <span>{{ $isi }}</span>
+                        <p style="text-align: justify;">{{ $isi }}</p> 
                       </div>
                   </div>
+              </div>
+              <div class="card-footer bg-transparent text-right">
+                <a href="{{ route('tanggapans',$item->id_pengaduan) }}" class="text-warning">Lihat tanggapan</a>
+                
               </div>
             </div>
             @endforeach

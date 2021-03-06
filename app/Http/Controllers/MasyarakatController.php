@@ -194,4 +194,10 @@ class MasyarakatController extends Controller
         $data = DB::table('tbl_pengaduan')->where('nik_id',Auth::guard('masyarakat')->user()->nik)->get();
         return view('masyarakat.history',['data'=>$data]);
     }
+
+    public function tanggapan($id)
+    {
+        $data = DB::table('tbl_tanggapan')->where('pengaduan_id',$id)->first();
+        return view('masyarakat.tanggapan',['data'=>$data]);
+    }
 }

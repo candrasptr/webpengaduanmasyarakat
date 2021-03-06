@@ -3,7 +3,7 @@
 @section('content')
     <!-- content -->
     <div class="container">
-        <br><br><br>
+      <br>
         <div class="row mt-5 mb-5">
   
           <div class="col-lg-12 gambar">
@@ -17,10 +17,9 @@
   
             <div class="row">
               <div class="col-md-6">
+                <h5 class="text-warning">Ayo! isi pengaduan sesuai yang ingin kalian sampaikan</h5><hr width="100" class="text-right" style="height: 2px; color: blue;">
+                <br>
                 <div class="card shadow" id="card-cart">
-                  <div class="card-header bg-transparent">
-                    <h5 class="text-warning">ISI PENGADUAN</h5>
-                  </div>
                   <div class="card-body">
                     <form action="/prosespengaduan" class="row" method="POST" enctype="multipart/form-data">
                       @csrf

@@ -27,7 +27,7 @@ class LoginController extends Controller
         return redirect()->intended('dashboard');
       } elseif (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
         // if successful, then redirect to their intended location
-      return redirect()->intended('masyarakat_depan');
+      return redirect()->intended('masyarakat_pengaduan');
     } else {
         return redirect('/login')->with('message','username atau password salah');
       }

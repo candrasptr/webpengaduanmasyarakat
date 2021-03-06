@@ -23,9 +23,15 @@
             </div>
   
             <div class="mt-5">
+              @if (Auth::guard('masyarakat')->check())
               <a href="masyarakat_pengaduan" class="button rounded-pill shadow tebel-sedang">Isi pengaduan</a>
               &nbsp;
               <a href="history" class="link">history pengaduan</a>
+              @else 
+              <a href="#" id="swal-6" class="button rounded-pill shadow tebel-sedang">Isi pengaduan</a>
+              &nbsp;
+              <a href="#" id="swal-6" class="link">history pengaduan</a>                
+              @endif
             </div>
   
             <br>
@@ -35,3 +41,25 @@
         </div>          
       </div>
 @endsection
+
+@push('page-scripts')   
+  <script src="{{ asset('node_modules/sweetalert/dist/sweetalert.min.js') }}"></script>
+  <script>
+    $("#swal-6").click(function() {
+  swal({
+      title: 'Harus login dulu',
+      text: 'Untuk mengisi pengaduan anda harus login terlebih dahulu',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location.href = "/loginmasyarakat";
+      } else {
+      swal('Oke!');
+      }
+    });
+});
+  </script>
+@endpush

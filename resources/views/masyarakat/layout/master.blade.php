@@ -14,7 +14,7 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body style="background-color: #fafafa;">
     
     <!-- background -->
     <img src="{{ asset('landing/assets/vector-bg.png') }}" class="bg" width="50%">

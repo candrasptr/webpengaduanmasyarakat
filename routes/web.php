@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('loginmasyarakat', function () {
     return view('welcome');
-});
+})->name('login.masyarakat');
 
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('proseslogin','LoginController@postLogin');
@@ -50,9 +50,12 @@ Route::group(['middleware'=>'auth:admin'], function(){
     Route::get('rekap_laporan','LaporanController@rekap');
 });
 
+
+Route::get('/','MasyarakatController@depan');
+
 Route::group(['middleware'=>'auth:masyarakat'], function(){
-    Route::get('masyarakat_depan','MasyarakatController@depan');
     Route::get('masyarakat_pengaduan','MasyarakatController@pengaduan');
     Route::post('prosespengaduan','MasyarakatController@prosespengaduan');
     Route::get('history','MasyarakatController@history');
+    Route::get('lihattanggapan/{id}','MasyarakatController@tanggapan')->name('tanggapans');
 });

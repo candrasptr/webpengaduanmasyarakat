@@ -31,7 +31,7 @@
                           <div class="input-group mb-3">
                             <input name="keyword" id="caribuku" type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" value="{{ Request()->keyword }}" autocomplete="off">
                             <div class="input-group-append">
-                              <button id="btncaribuku" class="btn btn-outline-violet bg-violet" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
+                              <button id="btncaribuku" class="btn btn-outline-warning bg-warning" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
                             </div>
                           </div>
                         </form>

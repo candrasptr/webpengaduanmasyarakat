@@ -72,7 +72,7 @@
     <div class="col-12 col-md-8 col-lg-8">
         <div class="card">
           <div class="card-header">
-            <h4>Pie Chart</h4>
+            <h4 class="text-warning">Pie Chart</h4>
           </div>
           <div class="card-body">
             <canvas id="myChart4"></canvas>
@@ -82,15 +82,15 @@
     <div class="col-lg-4 col-md-12 col-12 col-sm-12">
         <div class="card">
           <div class="card-header">
-            <h4>Recent Activities</h4>
+            <h4 class="text-warning">Recent Activities</h4>
           </div>
           <div class="card-body">
             <ul class="list-unstyled list-unstyled-border">
                 @foreach ($data as $item)
                 <li class="media">
-                  <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png" alt="avatar">
+                  <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-4.png" alt="avatar">
                   <div class="media-body">
-                    <div class="float-right text-primary">{{ $item->status }}</div>
+                    <div class="float-right @if($item->status == 'selesai') text-success @else text-warning @endif">{{ $item->status }}</div>
                     <div class="media-title">{{ $item->nama }}</div>
                     @php
                         $string = $item->isi_laporan;
@@ -104,7 +104,7 @@
                 @endforeach
             </ul>
             <div class="text-center pt-1 pb-1">
-              <a href="pengaduan" class="btn btn-primary btn-lg btn-round">
+              <a href="pengaduan" class="btn btn-warning btn-lg btn-round">
                 View All
               </a>
             </div>

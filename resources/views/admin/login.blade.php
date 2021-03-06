@@ -29,8 +29,8 @@
               <img src="../assets/img/student.png" alt="logo" width="100" class="shadow-sm rounded-circle">
             </div>
 
-            <div class="card card-success">
-              <div class="card-header"><h4 class="text-success">Login</h4></div>
+            <div class="card card-warning">
+              <div class="card-header"><h4 class="text-warning">Login</h4></div>
 
               <div class="card-body">
                 <form method="POST" action="/proseslogin" class="needs-validation" novalidate="">
@@ -54,7 +54,7 @@
                   </div>
 
                   @if(session('message'))
-                  <div class="alert alert-success alert-dismissible show fade">
+                  <div class="alert alert-warning alert-dismissible show fade">
                     <div class="alert-body">
                       <button class="close" data-dismiss="alert">
                         <span>×</span>
@@ -65,7 +65,7 @@
                   @endif
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-lg btn-block" tabindex="4">
+                    <button type="submit" class="btn btn-warning btn-lg btn-block" tabindex="4">
                       Login
                     </button>
                   </div>

@@ -12,7 +12,7 @@
                 <div class="card-body">
 
                     {{-- Button tambah --}}
-                    <a href="{{ route('masyarakat.create') }}" class="btn btn-violet mb-4"><i class="fas fa-plus text-light"></i></a>
+                    <a href="{{ route('masyarakat.create') }}" class="btn btn-warning mb-4"><i class="fas fa-plus text-light"></i></a>
                     
                     {{-- Form search --}}
                     <div class="float-right">
@@ -20,7 +20,7 @@
                           <div class="input-group mb-3">
                             <input name="keyword" id="caribuku" type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" value="{{ Request()->keyword }}" autocomplete="off">
                             <div class="input-group-append">
-                              <button id="btncaribuku" class="btn btn-outline-violet bg-violet" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
+                              <button id="btncaribuku" class="btn btn-outline-warning bg-warning" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
                             </div>
                           </div>
                         </form>
