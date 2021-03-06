@@ -56,6 +56,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="{{ asset('landing/bs/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('landing/js/onscroll.js') }}"></script>
+    <script src="{{ asset('node_modules/sweetalert/dist/sweetalert.min.js') }}"></script>
     @stack('page-scripts')
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

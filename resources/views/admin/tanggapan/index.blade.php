@@ -61,8 +61,8 @@
                                     <td>{{ $item->tanggapan }}</td>
                                     <td>{{ $item->tgl_tanggapan }}</td>
                                     <td>
-                                        <a href="{{ route('tanggapan.edit',$item->id_tanggapan) }}" class="btn btn-warning mb-3"><i class="fas fa-edit"></i></a>
-                                        <a href="#" data-id="" class="btn btn-danger confirm_script-{{$item->id_tanggapan}} mr-3">
+                                        <a href="{{ route('tanggapan.edit',$item->id_tanggapan) }}" class="btn btn-warning mb-1"><i class="fas fa-edit"></i></a>
+                                        <a href="#" data-id="" class="btn btn-danger confirm_script-{{$item->id_tanggapan}} mr-3 mb-1">
                                             <form action="{{ route('tanggapan.destroy',$item->id_tanggapan)}}" class="delete_form-{{$item->id_tanggapan}}" method="POST">
                                             @method('DELETE')
                                             @csrf

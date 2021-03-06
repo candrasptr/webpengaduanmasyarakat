@@ -91,14 +91,14 @@
                   <h5 class="text-warning">{{ $kode }} | {{ $item->status }}</h5>
                   <hr>
                   <div class="row">
-                      <div class="col-md-4 col-4">
+                      <div class="col-md-4 col-12">
                       @if ($item->foto != '')
                           <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
                       @else
                           <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
                       @endif
                       </div>
-                      <div class="col-md-8 col-8">
+                      <div class="col-md-8 col-12">
                         <b>Isi pengaduan</b><br>
                         @php
                             $num_char = 150;
@@ -129,14 +129,14 @@
                   <h5 class="text-warning">{{ $kode }} | {{ $item->status }}</h5>
                   <hr>
                   <div class="row">
-                      <div class="col-md-4 col-4">
+                      <div class="col-md-4 col-12">
                       @if ($item->foto != '')
                           <img src="{{ asset('assets/img/produk/'.$item->foto) }}" width="150"></img>
                       @else
                           <img src="{{ asset('assets/img/nonimage.jpg') }}" width="150"></img>
                       @endif
                       </div>
-                      <div class="col-md-8 col-8">
+                      <div class="col-md-8 col-12">
                         <b>Isi pengaduan</b><br>
                         @php
                             $num_char = 150;

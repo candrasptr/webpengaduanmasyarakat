@@ -33,6 +33,9 @@
                     <a href="#" id="swal" class="btn btn-warning px-5 text-light float-right" style="border-radius: 25px;">Detail</a>
                   </div>
                 </div> 
+                @php
+            $text = $data->tanggapan
+        @endphp
                 @else
                 <div class="card shadow" id="card-cart">
                   <div class="card-body">
@@ -45,30 +48,18 @@
             <br>
           </div>
         </div>          
+        
       </div>
-      <script>
-        $('#inputGambar_masakan').on('change',function(){
-        //get the file name
-          var fileName = $(this).val();
-          var panjangnamafile = fileName.length;
-          if (panjangnamafile > 22){
-            hasilpotong = fileName.substring(0, 22);
-            $(this).next('.custom-file-label').html(hasilpotong);
-          }else{
-            $(this).next('.custom-file-label').html(fileName);
-          }
-      })
-      </script>
 @endsection
-@if ($data !='')
+@if ($data != '')
 @push('page-scripts')
 <script src="{{ asset('node_modules/sweetalert/dist/sweetalert.min.js') }}"></script>
-<script type="text/javascript">
-
-        $("#swal").click(function() {
-	    swal('Detail Tanggapan', '{{ $data->tanggapan }}');
+<script type="text/javascript"> 
+       $("#swal").click(function() {
+	      swal('Good Job', `{{ $text }}`);
         });
-
 </script>
 @endpush
 @endif
+
+
