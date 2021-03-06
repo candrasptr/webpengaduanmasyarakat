@@ -20,6 +20,7 @@ Route::get('loginmasyarakat', function () {
 Route::get('login', 'LoginController@getLogin')->name('login');
 Route::post('proseslogin','LoginController@postLogin');
 Route::get('logout','LoginController@logout');
+Route::get('logoutmasyarakat','LoginController@logoutmasyarakat');
 Route::view('register', 'register');
 Route::post('regis', 'MasyarakatController@regis')->name('register');
 

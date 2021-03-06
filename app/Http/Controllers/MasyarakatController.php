@@ -146,7 +146,7 @@ class MasyarakatController extends Controller
             'password'=>bcrypt($password),
             'telp'=>$request->telp
         ]);
-        return redirect('/')->with('message','Register berhasil ditambahkan');
+        return redirect('loginmasyarakat')->with('message','Register berhasil ditambahkan');
     }
 
     public function pengaduan()

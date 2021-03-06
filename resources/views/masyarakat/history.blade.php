@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>SPP | SMKN 1 PDH</title>
+  <title>pengaduan</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="{{ asset('node_modules/bootstrap-social/bootstrap-social.css')}}">
 
   <!-- Template CSS -->
-  <link rel="icon" href="{{ asset('assets/img/logosmk.png') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}">
   <link href="{{ asset('landing/bs/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -26,20 +25,36 @@
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent shadow-sm fixed-top mb-3">
-            <img src="{{asset('assets/img/smk.png')}}" style="width: 100px;">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon pt-1"><i class="fas fa-bars text-light"></i></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ml-3">
-                  <li class="nav-item text-right">
-                    <a class="nav-link text-danger" href="/home" id="me">Hi, {{ Auth::guard('masyarakat')->user()->nama}}</span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
+        <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light mt-3 fixed-top" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="{{ asset('assets/img/logopengaduan.png') }}" height="50px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="nav nav-pills">
+            @if (Auth::guard('masyarakat')->check())
+            <li class="nav-item">
+              <a class="nav-link active bg-active link-navbar tebel-sedang" href="/">Home &nbsp;&nbsp;</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-navbar tebel-sedang" href="/history">History &nbsp;&nbsp;</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logoutmasyarakat" class="nav-link bg-custom rounded tebel-sedang shadow" id="btn-sign">LOG OUT</a>
+            </li>
+            @else
+            <li class="nav-item">
+              <a href="/loginmasyarakat" class="nav-link bg-custom rounded tebel-sedang shadow" id="btn-sign">SIGN IN</a>
+            </li>
+            @endif
+          </ul>
+        </div>
+      </div>
+    </nav>
     </div>
     <br><br><br><br><br><br>
 
@@ -94,8 +109,8 @@
                       </div>
                   </div>
               </div>
-              <div class="card-footer bg-transparent text-right">
-                <a href="">Lihat tanggapan</a>
+              <div class="card-footer bg-transparent text-warning text-right">
+                <a href="{{ route('tanggapans',$item->id_pengaduan) }}" class="text-warning">Lihat tanggapan</a>
               </div>
             </div>
           </div>
@@ -132,8 +147,8 @@
                       </div>
                   </div>
               </div>
-              <div class="card-footer bg-transparent text-right">
-                <a href="">Lihat tanggapan</a>
+              <div class="card-footer bg-transparent text-warning text-right">
+                <a href="{{ route('tanggapans',$item->id_pengaduan) }}" class="text-warning">Lihat tanggapan</a>
               </div>
             </div>
             @endforeach

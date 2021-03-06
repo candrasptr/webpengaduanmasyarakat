@@ -19,6 +19,7 @@
               <div class="col-md-6">
                 <h5 class="text-warning">Tanggapan dari pengaduan anda</h5><hr width="100" class="text-right" style="height: 2px; color: blue;">
                 <br>
+                @if ($data != '')
                 <div class="card shadow" id="card-cart">
                   <div class="card-body">
                       @php
@@ -31,20 +32,18 @@
                     <hr>
                     <a href="#" id="swal" class="btn btn-warning px-5 text-light float-right" style="border-radius: 25px;">Detail</a>
                   </div>
+                </div> 
+                @else
+                <div class="card shadow" id="card-cart">
+                  <div class="card-body">
+                    <h5>Tidak ada tanggapan</h5>
+                  </div>
                 </div>
+                @endif                
               </div>
             </div>
-
-              
-            
-            
-  
-            
-  
             <br>
-  
           </div>
-  
         </div>          
       </div>
       <script>
@@ -61,6 +60,7 @@
       })
       </script>
 @endsection
+@if ($data !='')
 @push('page-scripts')
 <script src="{{ asset('node_modules/sweetalert/dist/sweetalert.min.js') }}"></script>
 <script type="text/javascript">
@@ -71,3 +71,4 @@
 
 </script>
 @endpush
+@endif

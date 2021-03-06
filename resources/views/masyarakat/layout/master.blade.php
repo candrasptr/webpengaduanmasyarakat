@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('landing/css/resp.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style2.css') }}">
 
-    <title>Hello, world!</title>
+    <title>Pengaduan</title>
   </head>
   <body style="background-color: #fafafa;">
     
@@ -23,25 +23,28 @@
     <nav class="navbar navbar-expand-lg navbar-light mt-3 fixed-top" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="{{ asset('landing/assets/vector-logo.png') }}" height="50px">
+          <img src="{{ asset('assets/img/logopengaduan.png') }}" height="50px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="nav nav-pills">
+            @if (Auth::guard('masyarakat')->check())
             <li class="nav-item">
-              <a class="nav-link active bg-active link-navbar tebel-sedang"href="#">Home &nbsp;&nbsp;</a>
+              <a class="nav-link active bg-active link-navbar tebel-sedang" href="/">Home &nbsp;&nbsp;</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-navbar tebel-sedang" href="#">About &nbsp;&nbsp;</a>
+              <a class="nav-link link-navbar tebel-sedang" href="/history">History &nbsp;&nbsp;</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-navbar tebel-sedang" href="#">Service &nbsp;&nbsp;</a>
+              <a href="/logoutmasyarakat" class="nav-link bg-custom rounded tebel-sedang shadow" id="btn-sign">LOG OUT</a>
             </li>
+            @else
             <li class="nav-item">
-              <a href="#" class="nav-link bg-custom rounded tebel-sedang shadow" id="btn-sign">SIGN UP</a>
+              <a href="/loginmasyarakat" class="nav-link bg-custom rounded tebel-sedang shadow" id="btn-sign">SIGN IN</a>
             </li>
+            @endif
           </ul>
         </div>
       </div>
